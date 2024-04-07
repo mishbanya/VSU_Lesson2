@@ -1,10 +1,13 @@
 package ru.shalkoff.vsu_lesson2_2024.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -13,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import kotlinx.parcelize.Parcelize
 import ru.shalkoff.vsu_lesson2_2024.R
 import ru.shalkoff.vsu_lesson2_2024.provider.ContactsContentResolver
+import ru.shalkoff.vsu_lesson2_2024.provider.ShareSecretKeyContentProvider
 import ru.shalkoff.vsu_lesson2_2024.services.BackgroundService
 import ru.shalkoff.vsu_lesson2_2024.services.ForegroundService
 
@@ -21,6 +25,7 @@ data class User(val name: String?, val age: Int) : Parcelable
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
